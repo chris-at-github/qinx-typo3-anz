@@ -1,0 +1,15 @@
+
+plugin.tx_qxanz {
+	view {
+		# cat=plugin.tx_qxanz/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:qxanz/Resources/Private/Templates/
+		# cat=plugin.tx_qxanz/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:qxanz/Resources/Private/Partials/
+		# cat=plugin.tx_qxanz/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:qxanz/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_qxanz//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}
