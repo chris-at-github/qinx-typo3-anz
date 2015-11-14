@@ -3,35 +3,10 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2015-11-14T07:36:53Z" product-name="qxanz">
 		<header/>
 		<body>
-			<trans-unit id="tx_qxanz_domain_model_game">
-				<source>Game</source>
-			</trans-unit>
-			<trans-unit id="tx_qxanz_domain_model_game.title">
-				<source>Title</source>
-			</trans-unit>
-			<trans-unit id="tx_qxanz_domain_model_game.turn">
-				<source>Turn</source>
-			</trans-unit>
-			<trans-unit id="tx_qxanz_domain_model_base">
-				<source>Base</source>
-			</trans-unit>
-			<trans-unit id="tx_qxanz_domain_model_base.title">
-				<source>Title</source>
-			</trans-unit>
-			<trans-unit id="tx_qxanz_domain_model_base.game">
-				<source>Game</source>
-			</trans-unit>
-			<trans-unit id="tx_qxanz_domain_model_base.player">
-				<source>Player</source>
-			</trans-unit>
-			<trans-unit id="tx_qxanz_domain_model_player">
-				<source>Player</source>
-			</trans-unit>
-			<trans-unit id="tx_qxanz_domain_model_player.title">
-				<source>Title</source>
-			</trans-unit>
-			<trans-unit id="tx_qxanz_domain_model_player.game">
-				<source>Game</source>
+
+			<!-- Actions -->
+			<trans-unit id="actions.create">
+				<source>Hinzufügen</source>
 			</trans-unit>
 		</body>
 	</file>
