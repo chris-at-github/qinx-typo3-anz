@@ -4,9 +4,22 @@
 		<header/>
 		<body>
 
+			<!-- Basics -->
+			<trans-unit id="title">
+				<source>Bezeichnung</source>
+			</trans-unit>
+
 			<!-- Actions -->
 			<trans-unit id="actions.create">
 				<source>Hinzufügen</source>
+			</trans-unit>
+			<trans-unit id="actions.save">
+				<source>Speichern</source>
+			</trans-unit>
+
+			<!-- Actions -->
+			<trans-unit id="game.numberOfPlayers">
+				<source>Anzahl von Spielern</source>
 			</trans-unit>
 		</body>
 	</file>

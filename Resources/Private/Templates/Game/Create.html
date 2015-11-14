@@ -1,0 +1,15 @@
+<f:layout name="Default"/>
+
+<f:section name="Main">
+  <f:flashMessages renderMode="div" />
+  <f:render partial="FormErrors" arguments="{object:Game}" />
+
+  <f:form action="save" name="game" object="{game}">
+    <f:render partial="Game/Form" arguments="{game:game}" />
+
+    <div class="form-actions">
+			<f:form.submit value="{f:translate(key: 'actions.save')}"/>
+		</div>
+
+  </f:form>
+</f:section>

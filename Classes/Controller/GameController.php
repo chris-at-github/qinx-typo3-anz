@@ -51,7 +51,16 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 		$this->view->assign('game', $game);
 	}
 
-
+	/**
+	 * Action Save
+	 *
+	 * @param \Qinx\Qxanz\Domain\Model\Game $game
+	 * @return void
+	 */
+	public function saveAction(\Qinx\Qxanz\Domain\Model\Game $game) {
+		$this->gameRepository->save($game);
+		$this->redirect('list');
+	}
 
 
 
