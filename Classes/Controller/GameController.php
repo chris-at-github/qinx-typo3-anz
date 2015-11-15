@@ -55,11 +55,14 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 	 * Action Save
 	 *
 	 * @param \Qinx\Qxanz\Domain\Model\Game $game
+	 * @param array $settings
 	 * @return void
 	 */
-	public function saveAction(\Qinx\Qxanz\Domain\Model\Game $game) {
-		$this->gameRepository->save($game);
-		$this->redirect('list');
+	public function saveAction(\Qinx\Qxanz\Domain\Model\Game $game, $settings = array()) {
+		$this->objectManager->get('\Qinx\Qxanz\Domain\Repository\GameRepository')->save($game);
+
+		$this->addFlashMessage(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('game.message.create', 'Qxanz'));
+		$this->redirect('index');
 	}
 
 

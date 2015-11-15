@@ -1,7 +1,9 @@
+{namespace qx=Qinx\Qxsurvey\ViewHelpers}
+
 <f:layout name="Default" />
 
 <f:section name="Main">
-	<f:flashMessages renderMode="div" />
+	<qx:flashMessages />
 
 	<div>
 		<f:link.action action="create" class="button"><f:translate key="actions.create" /></f:link.action>

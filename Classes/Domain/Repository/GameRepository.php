@@ -1,7 +1,6 @@
 <?php
 namespace Qinx\Qxanz\Domain\Repository;
 
-
 /***************************************************************
  *
  *  Copyright notice
@@ -30,7 +29,5 @@ namespace Qinx\Qxanz\Domain\Repository;
 /**
  * The repository for Games
  */
-class GameRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
-
-	
+class GameRepository extends ApplicationRepository {
 }

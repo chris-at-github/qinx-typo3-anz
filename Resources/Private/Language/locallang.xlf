@@ -17,9 +17,13 @@
 				<source>Speichern</source>
 			</trans-unit>
 
-			<!-- Actions -->
+			<!-- Game -->
 			<trans-unit id="game.numberOfPlayers">
 				<source>Anzahl von Spielern</source>
+			</trans-unit>
+
+			<trans-unit id="game.message.create">
+				<source>neues Spiel erzeugt</source>
 			</trans-unit>
 		</body>
 	</file>
