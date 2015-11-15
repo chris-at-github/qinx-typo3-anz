@@ -5,6 +5,12 @@
 <f:section name="Main">
 	<qx:flashMessages />
 
+	<f:if condition="{games}">
+		<div>
+			<f:render partial="Game/List" arguments="{games: games}" />
+		</div>
+	</f:if>
+
 	<div>
 		<f:link.action action="create" class="button"><f:translate key="actions.create" /></f:link.action>
 	</div>
