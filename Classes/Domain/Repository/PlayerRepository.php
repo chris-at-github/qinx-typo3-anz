@@ -30,7 +30,5 @@ namespace Qinx\Qxanz\Domain\Repository;
 /**
  * The repository for Players
  */
-class PlayerRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
-
-	
+class PlayerRepository extends ApplicationRepository {
 }
