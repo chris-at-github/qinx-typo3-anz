@@ -25,6 +25,9 @@
 			<trans-unit id="game.message.create">
 				<source>neues Spiel erzeugt</source>
 			</trans-unit>
+			<trans-unit id="game.message.remove">
+				<source>Spiel wurde entfernt</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
