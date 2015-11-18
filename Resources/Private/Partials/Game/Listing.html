@@ -1,7 +1,7 @@
 <ul class="list-container">
 	<f:for each="{games}" as="game">
 		<li>
-			<header>{game.title}</header>
+			<header><f:link.action controller="Playground" action="index" arguments="{game: game}">{game.title}</f:link.action></header>
 		</li>
 	</f:for>
 </ul>

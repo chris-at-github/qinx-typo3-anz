@@ -27,9 +27,9 @@ namespace Qinx\Qxanz\Controller;
  ***************************************************************/
 
 /**
- * GameController
+ * PlaygroundController
  */
-class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class PlaygroundController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	/**
 	 * Action Index

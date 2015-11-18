@@ -28,6 +28,11 @@
 			<trans-unit id="game.message.remove">
 				<source>Spiel wurde entfernt</source>
 			</trans-unit>
+
+			<!-- Basis -->
+			<trans-unit id="colony">
+				<source>Kolonie</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
