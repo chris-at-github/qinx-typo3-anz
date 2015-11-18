@@ -91,6 +91,6 @@ classBuilder:
       parentClass: \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject
 
   Repository:
-    parentClass: \TYPO3\CMS\Extbase\Persistence\Repository
+    parentClass: \Qinx\Qxanz\Domain\Repository\ApplicationRepository
 
   setDefaultValuesForClassProperties: true
