@@ -7,10 +7,12 @@ if (!defined('TYPO3_MODE')) {
 	'Qinx.' . $_EXTKEY,
 	'Pi1',
 	array(
-		'Game' => 'index, playground, create, save',
+		'Game' => 'index, create, save',
+		'Playground' => 'index, base',
 	),
 	// non-cacheable actions
 	array(
-		'Game' => 'index, playground, save',
+		'Game' => 'index, save',
+		'Playground' => '',
 	)
 );
