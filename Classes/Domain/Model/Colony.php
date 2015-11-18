@@ -28,9 +28,9 @@ namespace Qinx\Qxanz\Domain\Model;
  ***************************************************************/
 
 /**
- * Base
+ * Colony
  */
-class Base extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Colony extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * title

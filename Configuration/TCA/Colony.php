@@ -3,8 +3,8 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$GLOBALS['TCA']['tx_qxanz_domain_model_base'] = array(
-	'ctrl' => $GLOBALS['TCA']['tx_qxanz_domain_model_base']['ctrl'],
+$GLOBALS['TCA']['tx_qxanz_domain_model_colony'] = array(
+	'ctrl' => $GLOBALS['TCA']['tx_qxanz_domain_model_colony']['ctrl'],
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, game, player',
 	),
@@ -38,8 +38,8 @@ $GLOBALS['TCA']['tx_qxanz_domain_model_base'] = array(
 				'items' => array(
 					array('', 0),
 				),
-				'foreign_table' => 'tx_qxanz_domain_model_base',
-				'foreign_table_where' => 'AND tx_qxanz_domain_model_base.pid=###CURRENT_PID### AND tx_qxanz_domain_model_base.sys_language_uid IN (-1,0)',
+				'foreign_table' => 'tx_qxanz_domain_model_colony',
+				'foreign_table_where' => 'AND tx_qxanz_domain_model_colony.pid=###CURRENT_PID### AND tx_qxanz_domain_model_colony.sys_language_uid IN (-1,0)',
 			),
 		),
 		'l10n_diffsource' => array(
@@ -99,7 +99,7 @@ $GLOBALS['TCA']['tx_qxanz_domain_model_base'] = array(
 
 		'title' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:qxanz/Resources/Private/Language/locallang_db.xlf:tx_qxanz_domain_model_base.title',
+			'label' => 'LLL:EXT:qxanz/Resources/Private/Language/locallang_db.xlf:tx_qxanz_domain_model_colony.title',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -108,7 +108,7 @@ $GLOBALS['TCA']['tx_qxanz_domain_model_base'] = array(
 		),
 		'game' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:qxanz/Resources/Private/Language/locallang_db.xlf:tx_qxanz_domain_model_base.game',
+			'label' => 'LLL:EXT:qxanz/Resources/Private/Language/locallang_db.xlf:tx_qxanz_domain_model_colony.game',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_qxanz_domain_model_game',
@@ -118,7 +118,7 @@ $GLOBALS['TCA']['tx_qxanz_domain_model_base'] = array(
 		),
 		'player' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:qxanz/Resources/Private/Language/locallang_db.xlf:tx_qxanz_domain_model_base.player',
+			'label' => 'LLL:EXT:qxanz/Resources/Private/Language/locallang_db.xlf:tx_qxanz_domain_model_colony.player',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_qxanz_domain_model_player',

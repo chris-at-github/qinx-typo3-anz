@@ -40,11 +40,11 @@ $GLOBALS['TCA']['tx_qxanz_domain_model_game'] = array(
 	),
 );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_qxanz_domain_model_base', 'EXT:qxanz/Resources/Private/Language/locallang_csh_tx_qxanz_domain_model_base.xlf');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_qxanz_domain_model_base');
-$GLOBALS['TCA']['tx_qxanz_domain_model_base'] = array(
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_qxanz_domain_model_colony', 'EXT:qxanz/Resources/Private/Language/locallang_csh_tx_qxanz_domain_model_colony.xlf');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_qxanz_domain_model_colony');
+$GLOBALS['TCA']['tx_qxanz_domain_model_colony'] = array(
 	'ctrl' => array(
-		'title'	=> 'LLL:EXT:qxanz/Resources/Private/Language/locallang_db.xlf:tx_qxanz_domain_model_base',
+		'title'	=> 'LLL:EXT:qxanz/Resources/Private/Language/locallang_db.xlf:tx_qxanz_domain_model_colony',
 		'label' => 'title',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
@@ -64,8 +64,8 @@ $GLOBALS['TCA']['tx_qxanz_domain_model_base'] = array(
 			'endtime' => 'endtime',
 		),
 		'searchFields' => 'title,game,player,',
-		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Base.php',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_qxanz_domain_model_base.gif'
+		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Colony.php',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_qxanz_domain_model_colony.gif'
 	),
 );
 

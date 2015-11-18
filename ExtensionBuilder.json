@@ -10,11 +10,11 @@
             "name": "New Model Object",
             "value": {
                 "actionGroup": {
-                    "_default0_list": true,
-                    "_default1_show": true,
-                    "_default2_new_create": true,
-                    "_default3_edit_update": true,
-                    "_default4_delete": true,
+                    "_default0_list": false,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
                     "customActions": [
                         "index",
                         "playground"
@@ -78,9 +78,11 @@
                     "_default2_new_create": false,
                     "_default3_edit_update": false,
                     "_default4_delete": false,
-                    "customActions": []
+                    "customActions": [
+                        ""
+                    ]
                 },
-                "name": "Base",
+                "name": "Colony",
                 "objectsettings": {
                     "addDeletedField": true,
                     "addHiddenField": true,
@@ -137,8 +139,8 @@
         {
             "config": {
                 "position": [
-                    60,
-                    541
+                    59,
+                    317
                 ]
             },
             "name": "New Model Object",
@@ -212,7 +214,7 @@
         },
         "extensionKey": "qxanz",
         "name": "Qinx Anz",
-        "originalExtensionKey": "",
+        "originalExtensionKey": "qxanz",
         "persons": [
             {
                 "company": "",
@@ -273,7 +275,7 @@
         }
     ],
     "log": {
-        "last_modified": "2015-11-14 07:36",
+        "last_modified": "2015-11-18 06:57",
         "extension_builder_version": "6.2.0",
         "be_user": "Christian Pschorr (1)"
     }

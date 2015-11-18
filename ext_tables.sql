@@ -40,9 +40,9 @@ CREATE TABLE tx_qxanz_domain_model_game (
 );
 
 #
-# Table structure for table 'tx_qxanz_domain_model_base'
+# Table structure for table 'tx_qxanz_domain_model_colony'
 #
-CREATE TABLE tx_qxanz_domain_model_base (
+CREATE TABLE tx_qxanz_domain_model_colony (
 
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,

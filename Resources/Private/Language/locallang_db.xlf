@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2015-11-14T07:36:53Z" product-name="qxanz">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-11-18T06:57:37Z" product-name="qxanz">
 		<header/>
 		<body>
 			<trans-unit id="tx_qxanz_domain_model_game">
@@ -12,16 +12,16 @@
 			<trans-unit id="tx_qxanz_domain_model_game.turn">
 				<source>Turn</source>
 			</trans-unit>
-			<trans-unit id="tx_qxanz_domain_model_base">
-				<source>Base</source>
+			<trans-unit id="tx_qxanz_domain_model_colony">
+				<source>Colony</source>
 			</trans-unit>
-			<trans-unit id="tx_qxanz_domain_model_base.title">
+			<trans-unit id="tx_qxanz_domain_model_colony.title">
 				<source>Title</source>
 			</trans-unit>
-			<trans-unit id="tx_qxanz_domain_model_base.game">
+			<trans-unit id="tx_qxanz_domain_model_colony.game">
 				<source>Game</source>
 			</trans-unit>
-			<trans-unit id="tx_qxanz_domain_model_base.player">
+			<trans-unit id="tx_qxanz_domain_model_colony.player">
 				<source>Player</source>
 			</trans-unit>
 			<trans-unit id="tx_qxanz_domain_model_player">
