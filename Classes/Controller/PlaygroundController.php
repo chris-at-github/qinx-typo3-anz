@@ -37,7 +37,10 @@ class PlaygroundController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 	 * @param \Qinx\Qxanz\Domain\Model\Game $game
 	 * @return void
 	 */
-	public function indexAction(\Qinx\Qxanz\Domain\Model\Game $game) {
-		$this->view->assign('game', $this->objectManager->get('\Qinx\Qxanz\Domain\Repository\GameRepository')->findAll());
+	public function indexAction(\Qinx\Qxanz\Domain\Model\Game $game = null) {
+		$this->view->assign('game', $game);
+
+		$session = $this->objectManager->get('\Qinx\Qxanz\Service\Session'); /* @var \Qinx\Qxanz\Service\Session $session */
+		$session->set('game', 5);
 	}
 }

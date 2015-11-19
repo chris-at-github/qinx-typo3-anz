@@ -1,7 +1,6 @@
 <?php
 namespace Qinx\Qxanz\Domain\Model;
 
-
 /***************************************************************
  *
  *  Copyright notice
