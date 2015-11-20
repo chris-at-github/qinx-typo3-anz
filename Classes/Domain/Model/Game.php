@@ -30,7 +30,7 @@ namespace Qinx\Qxanz\Domain\Model;
 /**
  * Game
  */
-class Game extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Game extends Application {
 
 	/**
 	 * title
@@ -45,6 +45,13 @@ class Game extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @var integer
 	 */
 	protected $turn = 0;
+
+	/**
+	 * player of this game
+	 *
+	 * @var \TYPO3\CMS\Extbase\Persistence\Generic\QueryResult
+	 */
+	protected $players;
 
 	/**
 	 * Returns the title
@@ -84,4 +91,18 @@ class Game extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->turn = $turn;
 	}
 
+	/**
+	 * Returns all players
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\Generic\QueryResult
+	 */
+	public function getPlayers() {
+		if(isset($this->players) === false) {
+			$this->players = $this->getObjectManager()->get('\Qinx\Qxanz\Domain\Repository\PlayerRepository')->findAll([
+				'game' => $this
+			]);
+		}
+
+		return $this->players;
+	}
 }

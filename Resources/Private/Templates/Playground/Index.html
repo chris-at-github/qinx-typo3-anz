@@ -1,10 +1,16 @@
-{namespace qx=Qinx\Qxsurvey\ViewHelpers}
+{namespace qx=Qinx\Qxanz\ViewHelpers}
 
 <f:layout name="Default"/>
 
 <f:section name="Main">
 	<qx:flashMessages/>
 
-	<f:render partial="Playground/Navigation" arguments="{game: game}" />
+	<f:if condition="{game.players}">
+		<div class="anz-game--players">
+			<f:render partial="Player/Listing" arguments="{players: game.players}"/>
+		</div>
+	</f:if>
+
+	<!--<f:render partial="Playground/Navigation" arguments="{game: game}" />-->
 
 </f:section>
