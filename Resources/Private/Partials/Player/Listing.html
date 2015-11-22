@@ -2,6 +2,10 @@
 	<f:for each="{players}" as="player">
 		<li>
 			<header>{player.title}</header>
+
+			<ul class="list-actions">
+				<li><f:link.action action="activatePlayer" arguments="{player: player}">Auswählen</f:link.action></li>
+			</ul>
 		</li>
 	</f:for>
 </ul>

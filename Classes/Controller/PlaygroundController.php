@@ -49,4 +49,20 @@ class PlaygroundController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 
 		$this->view->assign('game', $game);
 	}
+
+	/**
+	 * Action Active Player
+	 *
+	 * @param \Qinx\Qxanz\Domain\Model\Player $player
+	 * @return void
+	 */
+	public function activatePlayerAction(\Qinx\Qxanz\Domain\Model\Player $player) {
+		$session = $this->objectManager->get('\Qinx\Qxanz\Service\Session'); /* @var \Qinx\Qxanz\Service\Session $session */
+
+		if($player instanceof \Qinx\Qxanz\Domain\Model\Player) {
+			$session->set('player', $player->getUid());
+		}
+
+		$this->redirect('index');
+	}
 }
