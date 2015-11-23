@@ -92,6 +92,21 @@ class Game extends Application {
 	}
 
 	/**
+	 * Return the active player (if is set in session)
+	 *
+	 * @return \Qinx\Qxanz\Domain\Model\
+	 */
+	public function getPlayer() {
+		$session = $this->getObjectManager()->get('\Qinx\Qxanz\Service\Session'); /* @var \Qinx\Qxanz\Service\Session $session */
+
+		if($session->has('player') === true) {
+			return $this->getObjectManager()->get('\Qinx\Qxanz\Domain\Repository\PlayerRepository')->findByUid($session->get('player'));
+		}
+
+		return null;
+	}
+
+	/**
 	 * Returns all players
 	 *
 	 * @return \TYPO3\CMS\Extbase\Persistence\Generic\QueryResult
