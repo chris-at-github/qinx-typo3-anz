@@ -65,4 +65,15 @@ class PlaygroundController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 
 		$this->redirect('index');
 	}
+
+	/**
+	 * Action Turn End
+	 *
+	 * @param \Qinx\Qxanz\Domain\Model\Game $game
+	 * @return void
+	 */
+	public function turnEndAction(\Qinx\Qxanz\Domain\Model\Game $game) {
+		$this->objectManager->get('\Qinx\Qxanz\Domain\Repository\GameRepository')->save($game->addTurn());
+		$this->redirect('index');
+	}
 }

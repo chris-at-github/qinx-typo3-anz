@@ -8,11 +8,11 @@ if (!defined('TYPO3_MODE')) {
 	'Pi1',
 	array(
 		'Game' => 'index, create, save',
-		'Playground' => 'index, base, activatePlayer',
+		'Playground' => 'index, base, activatePlayer, turnEnd',
 	),
 	// non-cacheable actions
 	array(
 		'Game' => 'index, save',
-		'Playground' => '',
+		'Playground' => 'activatePlayer, turnEnd',
 	)
 );

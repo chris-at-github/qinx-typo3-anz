@@ -66,10 +66,11 @@ class Game extends Application {
 	 * Sets the title
 	 * 
 	 * @param string $title
-	 * @return void
+	 * @return \Qinx\Qxanz\Domain\Model\Game
 	 */
 	public function setTitle($title) {
 		$this->title = $title;
+		return $this;
 	}
 
 	/**
@@ -85,10 +86,21 @@ class Game extends Application {
 	 * Sets the turn
 	 * 
 	 * @param integer $turn
-	 * @return void
+	 * @return \Qinx\Qxanz\Domain\Model\Game
 	 */
 	public function setTurn($turn) {
 		$this->turn = $turn;
+		return $this;
+	}
+
+	/**
+	 * Add one on turn
+	 *
+	 * @return \Qinx\Qxanz\Domain\Model\Game
+	 */
+	public function addTurn() {
+		$this->turn++;
+		return $this;
 	}
 
 	/**
