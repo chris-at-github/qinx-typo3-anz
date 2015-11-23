@@ -3,14 +3,31 @@
 <f:layout name="Default"/>
 
 <f:section name="Main">
+	<f:render section="Header" arguments="{_all}" />
+
 	<qx:flashMessages/>
+
+
 
 	<f:if condition="{game.players}">
 		<div class="anz-game--players">
-			<f:render partial="Player/Listing" arguments="{players: game.players}"/>
+			<f:render partial="Player/Listing" arguments="{players: game.players}" />
 		</div>
 	</f:if>
 
 	<!--<f:render partial="Playground/Navigation" arguments="{game: game}" />-->
 
+</f:section>
+
+<f:section name="Header">
+	<div class="anz-game--header">
+		<div class="row">
+			<div class="col-sm-9"> </div>
+			<div class="col-sm-3">
+				<f:if condition="{game.player}">
+					<f:render partial="Player/Avatar" arguments="{player: game.player}"/>
+				</f:if>
+			</div>
+		</div>
+	</div>
 </f:section>
