@@ -22,11 +22,12 @@
 <f:section name="Header">
 	<div class="anz-game--header">
 		<div class="row">
-			<div class="col-sm-9"> </div>
-			<div class="col-sm-3 clearfix">
+			<div class="col-sm-8"> </div>
+			<div class="col-sm-4 col-sm-right clearfix">
 				<f:if condition="{game.player}">
-					<f:render partial="Player/Avatar" arguments="{player: game.player}"/>
+					<f:render partial="Player/Avatar" arguments="{player: game.player}" />
 				</f:if>
+				<f:render partial="Playground/Turn" arguments="{game: game}" />
 			</div>
 		</div>
 	</div>
