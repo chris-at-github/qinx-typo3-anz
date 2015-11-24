@@ -30,23 +30,38 @@ namespace Qinx\Qxanz\Controller;
 /**
  * ColonyController
  */
-class ColonyController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class ColonyController extends ApplicationController {
 
 	/**
-	 * colonyRepository
-	 * 
-	 * @var \Qinx\Qxanz\Domain\Repository\ColonyRepository
-	 * @inject
+	 * Index Action
+	 *
+	 * @return void
 	 */
-	protected $colonyRepository = NULL;
+	public function indexAction() {
+	}
 
 	/**
-	 * action
+	 * Create Action
 	 * 
 	 * @return void
 	 */
-	public function Action() {
-		
+	public function createAction() {
+		if($this->session->has('player') === false) {
+			$this->addFlashMessage('Bitte Player wählen', \TYPO3\CMS\Core\Messaging\AbstractMessage::NOTICE);
+			$this->redirect('index', 'Playground');
+		}
+
+		$this->view->assign('player', $this->objectManager->get('\Qinx\Qxanz\Domain\Repository\PlayerRepository')->findByUid($this->session->get('player')));
 	}
 
+	/**
+	 * Action Save
+	 *
+	 * @param \Qinx\Qxanz\Domain\Model\Colony $colony
+	 * @return void
+	 */
+	public function saveAction(\Qinx\Qxanz\Domain\Model\Colony $colony) {
+		$this->objectManager->get('\Qinx\Qxanz\Domain\Repository\ColonyRepository')->save($colony);
+		$this->redirect('index');
+	}
 }

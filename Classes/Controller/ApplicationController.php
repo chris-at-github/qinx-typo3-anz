@@ -34,7 +34,7 @@ class ApplicationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
 	/**
 	 * Session service class
 	 *
-	 * @var \Qinx\Qxanz\Service\Session $session
+	 * @var \Qinx\Qxanz\Service\Session
 	 */
 	protected $session;
 

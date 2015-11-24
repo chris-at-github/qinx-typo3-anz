@@ -1,0 +1,20 @@
+<f:layout name="Default"/>
+
+<f:section name="Main">
+  <f:flashMessages renderMode="div" />
+  <f:render partial="FormErrors" arguments="{object: Colony}" />
+
+  <f:form action="save" name="colony" object="{colony}">
+		<div>
+			<f:form.hidden property="game" value="{player.game}"/>
+			<f:form.hidden property="player" value="{player}" />
+		</div>
+
+    <f:render partial="Colony/Form" arguments="{game: colony}" />
+
+    <div class="form-actions">
+			<f:form.submit value="{f:translate(key: 'actions.save')}"/>
+		</div>
+
+  </f:form>
+</f:section>

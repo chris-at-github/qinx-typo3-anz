@@ -31,6 +31,4 @@ namespace Qinx\Qxanz\Domain\Repository;
  * The repository for Colonies
  */
 class ColonyRepository extends ApplicationRepository {
-
-	
 }

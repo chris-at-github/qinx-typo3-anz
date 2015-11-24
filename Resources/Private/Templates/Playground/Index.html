@@ -8,7 +8,15 @@
 	<qx:flashMessages/>
 
 	<div class="row">
-		<div class="col-sm-8"></div>
+		<div class="col-sm-8">
+
+			<qx:not condition="{game.player.colony}">
+				<div>
+					<f:link.action controller="Colony" action="create" class="button">Kolonie errichten</f:link.action>
+				</div>
+			</qx:not>
+
+		</div>
 		<div class="col-sm-4">
 
 			<f:if condition="{game.players}">
