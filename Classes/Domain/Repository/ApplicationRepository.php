@@ -35,6 +35,16 @@ class ApplicationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	 * Returns all entries that matches to the options
 	 *
 	 * @param array $options
+	 * @return \TYPO3\CMS\Extbase\Persistence\Generic\QueryResult
+	 */
+	public function findBy($options = array()) {
+		return $this->findAllBy($options)->getFirst();
+	}
+
+	/**
+	 * Returns all entries that matches to the options
+	 *
+	 * @param array $options
 	 * @param array $ordering
 	 * @return \TYPO3\CMS\Extbase\Persistence\Generic\QueryResult
 	 */
@@ -48,6 +58,14 @@ class ApplicationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 			}
 
 			$matches[] = $query->equals('game', $options['game']);
+		}
+
+		if(isset($options['player']) === true) {
+			if($options['player'] instanceof \Qinx\Qxanz\Domain\Model\Player) {
+				$options['player'] = $options['player']->getUid();
+			}
+
+			$matches[] = $query->equals('player', $options['player']);
 		}
 
 		if(empty($matches) === false) {

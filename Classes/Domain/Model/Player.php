@@ -30,7 +30,7 @@ namespace Qinx\Qxanz\Domain\Model;
 /**
  * Player
  */
-class Player extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Player extends Application {
 
 	/**
 	 * title
@@ -85,4 +85,12 @@ class Player extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->game = $game;
 	}
 
+	/**
+	 * Returns the players colony
+	 *
+	 * @return \Qinx\Qxanz\Domain\Model\Colony
+	 */
+	public function getColony() {
+		return $this->getObjectManager()->get('\Qinx\Qxanz\Domain\Repository\ColonyRepository')->findBy(['player' => $this]);
+	}
 }

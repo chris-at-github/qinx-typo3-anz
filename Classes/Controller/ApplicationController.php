@@ -39,6 +39,13 @@ class ApplicationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
 	protected $session;
 
 	/**
+	 * Player model class
+	 *
+	 * @var \Qinx\Qxanz\Domain\Model\Player
+	 */
+	protected $player;
+
+	/**
 	 * Initializes the controller before invoking an action method. Use to set the session service for all controllers.
 	 *
 	 * @return void
@@ -48,5 +55,18 @@ class ApplicationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
 		parent::initializeAction();
 
 		$this->session = $this->objectManager->get('\Qinx\Qxanz\Service\Session');
+	}
+
+	/**
+	 * Returns the current active player
+	 *
+	 * @return \Qinx\Qxanz\Domain\Model\Player
+	 */
+	public function getPlayer() {
+		if($this->player === null && $this->session->has('player') === true) {
+			$this->player = $this->objectManager->get('\Qinx\Qxanz\Domain\Repository\PlayerRepository')->findByUid($this->session->get('player'));
+		}
+
+		return $this->player;
 	}
 }

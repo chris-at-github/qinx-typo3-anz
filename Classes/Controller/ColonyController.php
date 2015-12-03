@@ -38,7 +38,7 @@ class ColonyController extends ApplicationController {
 	 * @return void
 	 */
 	public function indexAction() {
-
+		$this->view->assign('player', $this->getPlayer());
 	}
 
 	/**
