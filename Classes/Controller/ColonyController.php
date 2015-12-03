@@ -38,6 +38,7 @@ class ColonyController extends ApplicationController {
 	 * @return void
 	 */
 	public function indexAction() {
+
 	}
 
 	/**

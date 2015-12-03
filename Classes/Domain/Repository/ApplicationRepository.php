@@ -32,6 +32,32 @@ namespace Qinx\Qxanz\Domain\Repository;
 class ApplicationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 	/**
+	 * Returns all entries that matches to the options
+	 *
+	 * @param array $options
+	 * @param array $ordering
+	 * @return \TYPO3\CMS\Extbase\Persistence\Generic\QueryResult
+	 */
+	public function findAllBy($options = array(), $ordering = array()) {
+		$matches = [];
+		$query = $this->createQuery();
+
+		if(isset($options['game']) === true) {
+			if($options['game'] instanceof \Qinx\Qxanz\Domain\Model\Game) {
+				$options['game'] = $options['game']->getUid();
+			}
+
+			$matches[] = $query->equals('game', $options['game']);
+		}
+
+		if(empty($matches) === false) {
+			$query->matching($query->logicalAnd($matches));
+		}
+
+		return $query->execute();
+	}
+
+	/**
 	 * Save a model dependents on the model is new (uid = null) or not
 	 *
 	 * @param \TYPO3\CMS\Extbase\DomainObject\AbstractEntity $model

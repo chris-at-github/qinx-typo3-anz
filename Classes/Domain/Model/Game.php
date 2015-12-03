@@ -125,7 +125,7 @@ class Game extends Application {
 	 */
 	public function getPlayers() {
 		if(isset($this->players) === false) {
-			$this->players = $this->getObjectManager()->get('\Qinx\Qxanz\Domain\Repository\PlayerRepository')->findAll([
+			$this->players = $this->getObjectManager()->get('\Qinx\Qxanz\Domain\Repository\PlayerRepository')->findAllBy([
 				'game' => $this
 			]);
 		}

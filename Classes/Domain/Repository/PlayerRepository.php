@@ -30,30 +30,4 @@ namespace Qinx\Qxanz\Domain\Repository;
  * The repository for Players
  */
 class PlayerRepository extends ApplicationRepository {
-
-	/**
-	 * Returns all players that matches to the options
-	 *
-	 * @param array $options
-	 * @param array $ordering
-	 * @return \TYPO3\CMS\Extbase\Persistence\Generic\QueryResult
-	 */
-	public function findAll($options = array(), $ordering = array()) {
-		$matches 	= [];
-		$query 		= $this->createQuery();
-
-		if(isset($options['game']) === true) {
-			if($options['game'] instanceof \Qinx\Qxanz\Domain\Model\Game) {
-				$options['game'] = $options['game']->getUid();
-			}
-
-			$matches[] = $query->equals('game', $options['game']);
-		}
-
-		if(empty($matches) === false) {
-			$query->matching($query->logicalAnd($matches));
-		}
-
-		return $query->execute();
-	}
 }
