@@ -39,6 +39,13 @@ class ApplicationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
 	protected $session;
 
 	/**
+	 * Game model class
+	 *
+	 * @var \Qinx\Qxanz\Domain\Model\Game
+	 */
+	protected $game;
+
+	/**
 	 * Player model class
 	 *
 	 * @var \Qinx\Qxanz\Domain\Model\Player
@@ -55,6 +62,36 @@ class ApplicationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
 		parent::initializeAction();
 
 		$this->session = $this->objectManager->get('\Qinx\Qxanz\Service\Session');
+	}
+
+	/**
+	 * Initializes the view before invoking an action method.
+	 *
+	 * Override this method to solve assign variables common for all actions
+	 * or prepare the view in another way before the action is called.
+	 *
+	 * @param \TYPO3\CMS\Extbase\Mvc\View\ViewInterface $view The view to be initialized
+	 *
+	 * @return void
+	 * @api
+	 */
+	protected function initializeView(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface $view) {
+		parent::initializeView($view);
+
+		$this->view->assign('game', $this->getGame());
+	}
+
+	/**
+	 * Returns the current game
+	 *
+	 * @return \Qinx\Qxanz\Domain\Model\Game
+	 */
+	public function getGame() {
+		if($this->game === null && $this->session->has('game') === true) {
+			$this->game = $this->objectManager->get('\Qinx\Qxanz\Domain\Repository\GameRepository')->findByUid($this->session->get('game'));
+		}
+
+		return $this->game;
 	}
 
 	/**
