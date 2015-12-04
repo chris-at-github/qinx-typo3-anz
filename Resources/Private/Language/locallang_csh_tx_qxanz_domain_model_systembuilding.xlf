@@ -6,9 +6,6 @@
 			<trans-unit id="title.description">
 				<source>title</source>
 			</trans-unit>
-			<trans-unit id="game.description">
-				<source>game</source>
-			</trans-unit>
 		</body>
 	</file>
 </xliff>

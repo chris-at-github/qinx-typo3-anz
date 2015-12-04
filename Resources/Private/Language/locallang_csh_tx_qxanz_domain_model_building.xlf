@@ -3,11 +3,11 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2015-12-04T07:37:47Z" product-name="qxanz">
 		<header/>
 		<body>
-			<trans-unit id="title.description">
-				<source>title</source>
+			<trans-unit id="player.description">
+				<source>player</source>
 			</trans-unit>
-			<trans-unit id="game.description">
-				<source>game</source>
+			<trans-unit id="system.description">
+				<source>system</source>
 			</trans-unit>
 		</body>
 	</file>
