@@ -40,6 +40,9 @@ class ColonyController extends ApplicationController {
 	 */
 	public function indexAction() {
 		$this->view->assign('player', $this->getPlayer());
+		$this->view->assign('buildings', $this->objectManager->get('\Qinx\Qxanz\Domain\Repository\BuildingRepository')->findAllBy([
+			'player' => $this->getPlayer()
+		]));
 	}
 
 	/**

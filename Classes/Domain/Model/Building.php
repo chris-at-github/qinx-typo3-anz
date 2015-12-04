@@ -87,4 +87,12 @@ class Building extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		return $this;
 	}
 
+	/**
+	 * Returns the title of the building base on system->title
+	 *
+	 * @return string
+	 */
+	public function getTitle() {
+		return $this->getSystem()->getTitle();
+	}
 }

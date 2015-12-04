@@ -10,6 +10,16 @@
 	<div class="container anz-colony--buildings">
 		<header>Gebäude</header>
 
+		<f:if condition="{buildings}">
+			<ul class="list-container">
+				<f:for each="{buildings}" as="building">
+					<li>
+						<f:render partial="Building/ListingItem" arguments="{building: building}" />
+					</li>
+				</f:for>
+			</ul>
+		</f:if>
+
 		<div>
 			<f:link.action action="createBuilding" class="button" arguments="{colony: player.colony}">Gebäude erstellen</f:link.action>
 		</div>
