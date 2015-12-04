@@ -2,4 +2,8 @@
 
 <f:section name="Main">
   <f:flashMessages renderMode="div" />
+
+	<div class="anz-colony--properties">
+		<f:render partial="Colony/Properties" arguments="{colony: player.colony}" />
+	</div>
 </f:section>
