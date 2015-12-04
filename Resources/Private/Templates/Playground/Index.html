@@ -1,10 +1,8 @@
 {namespace qx=Qinx\Qxanz\ViewHelpers}
 
-<f:layout name="Default"/>
+<f:layout name="Default" />
 
 <f:section name="Main">
-	<f:render section="Header" arguments="{_all}" />
-
 	<qx:flashMessages/>
 
 	<div class="row">
@@ -28,20 +26,4 @@
 		</div>
 	</div>
 
-</f:section>
-
-<f:section name="Header">
-	<div class="anz-game--header">
-		<div class="row">
-			<div class="col-sm-8">
-				<f:render partial="Playground/Navigation" arguments="{game: game}"/>
-			</div>
-			<div class="col-sm-4 col-sm-right clearfix">
-				<f:if condition="{game.player}">
-					<f:render partial="Player/Avatar" arguments="{player: game.player}" />
-				</f:if>
-				<f:render partial="Playground/Turn" arguments="{game: game}" />
-			</div>
-		</div>
-	</div>
 </f:section>
