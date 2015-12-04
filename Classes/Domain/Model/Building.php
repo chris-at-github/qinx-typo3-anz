@@ -60,10 +60,11 @@ class Building extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * Sets the player
 	 * 
 	 * @param \Qinx\Qxanz\Domain\Model\Player $player
-	 * @return void
+	 * @return \Qinx\Qxanz\Domain\Model\Building
 	 */
 	public function setPlayer(\Qinx\Qxanz\Domain\Model\Player $player) {
 		$this->player = $player;
+		return $this;
 	}
 
 	/**
@@ -79,10 +80,11 @@ class Building extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * Sets the system
 	 * 
 	 * @param \Qinx\Qxanz\Domain\Model\SystemBuilding $system
-	 * @return void
+	 * @return \Qinx\Qxanz\Domain\Model\Building
 	 */
 	public function setSystem(\Qinx\Qxanz\Domain\Model\SystemBuilding $system) {
 		$this->system = $system;
+		return $this;
 	}
 
 }

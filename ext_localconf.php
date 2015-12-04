@@ -9,12 +9,12 @@ if (!defined('TYPO3_MODE')) {
 	array(
 		'Game' => 'index, create, save',
 		'Playground' => 'index, base, activatePlayer, turnEnd',
-		'Colony' => 'index, create, save',
+		'Colony' => 'index, create, save, createBuilding, saveBuilding',
 	),
 	// non-cacheable actions
 	array(
 		'Game' => 'index, save',
 		'Playground' => 'activatePlayer, turnEnd',
-		'Colony' => 'index, save',
+		'Colony' => 'index, save, saveBuilding',
 	)
 );

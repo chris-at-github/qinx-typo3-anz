@@ -28,8 +28,7 @@ namespace Qinx\Qxanz\Domain\Repository;
  ***************************************************************/
 
 /**
- * The repository for SystemBuildings
+ * The repository for Buildings
  */
-class SystemBuildingRepository extends SystemRepository {
-
+class BuildingRepository extends ApplicationRepository {
 }

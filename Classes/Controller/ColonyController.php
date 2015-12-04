@@ -26,6 +26,7 @@ namespace Qinx\Qxanz\Controller;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use Qinx\Qxanz\Domain\Model\Building;
 
 /**
  * ColonyController
@@ -63,6 +64,32 @@ class ColonyController extends ApplicationController {
 	 */
 	public function saveAction(\Qinx\Qxanz\Domain\Model\Colony $colony) {
 		$this->objectManager->get('\Qinx\Qxanz\Domain\Repository\ColonyRepository')->save($colony);
+		$this->redirect('index');
+	}
+
+	/**
+	 * Action Create Building
+	 *
+	 * @param \Qinx\Qxanz\Domain\Model\Colony $colony
+	 * @return void
+	 */
+	public function createBuildingAction(\Qinx\Qxanz\Domain\Model\Colony $colony) {
+		$this->view->assign('buildings', $this->objectManager->get('\Qinx\Qxanz\Domain\Repository\SystemBuildingRepository')->findAllBy());
+	}
+
+	/**
+	 * Action Save Building
+	 *
+	 * @param \Qinx\Qxanz\Domain\Model\SystemBuilding $systemBuilding
+	 * @return void
+	 */
+	public function saveBuildingAction(\Qinx\Qxanz\Domain\Model\SystemBuilding $systemBuilding) {
+		$building = new \Qinx\Qxanz\Domain\Model\Building();
+		$building
+			->setPlayer($this->getPlayer())
+			->setSystem($systemBuilding);
+
+		$this->objectManager->get('\Qinx\Qxanz\Domain\Repository\BuildingRepository')->save($building);
 		$this->redirect('index');
 	}
 }

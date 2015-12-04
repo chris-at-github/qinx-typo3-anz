@@ -1,0 +1,19 @@
+<f:layout name="Default"/>
+
+<f:section name="Main">
+	<f:flashMessages renderMode="div"/>
+
+	<f:if condition="{buildings}">
+		<ul class="list-container">
+			<f:for each="{buildings}" as="building">
+				<li>
+					<f:render partial="Building/ListingItem" arguments="{building: building}" />
+
+					<ul class="list-actions">
+						<li><f:link.action action="saveBuilding" arguments="{systemBuilding: building}">Erstellen</f:link.action></li>
+					</ul>
+				</li>
+			</f:for>
+		</ul>
+	</f:if>
+</f:section>
