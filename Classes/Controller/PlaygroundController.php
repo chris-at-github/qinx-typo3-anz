@@ -73,6 +73,10 @@ class PlaygroundController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 	 * @return void
 	 */
 	public function turnEndAction(\Qinx\Qxanz\Domain\Model\Game $game) {
+
+		// Before Turn End
+		$events = $this->objectManager->get('\Qinx\Qxanz\Domain\Repository\EventRepository')->findAll(['event' => 'onTurnEnd']);
+
 		$this->objectManager->get('\Qinx\Qxanz\Domain\Repository\GameRepository')->save($game->addTurn());
 		$this->redirect('index');
 	}

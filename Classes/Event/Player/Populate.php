@@ -1,5 +1,5 @@
 <?php
-namespace Qinx\Qxanz\Event;
+namespace Qinx\Qxanz\Event\Player;
 
 	/***************************************************************
 	 *
@@ -27,7 +27,21 @@ namespace Qinx\Qxanz\Event;
 	 ***************************************************************/
 
 /**
- * Event
+ * PlayerEvent
  */
-class Event {
+class Populate extends \Qinx\Qxanz\Event\Player {
+
+	/**
+	 * Event before turn end
+	 *
+	 * @param \Qinx\Qxanz\Domain\Model\Player $player
+	 * @return \Qinx\Qxanz\Domain\Model\Player $player
+	 */
+	public function onTurnEnd(\Qinx\Qxanz\Domain\Model\Player $player) {
+		$population = $player->getPopulation();
+		$population++;
+
+		$player->setPopulation($population);
+		return $player;
+	}
 }

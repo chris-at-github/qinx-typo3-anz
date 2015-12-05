@@ -1,5 +1,5 @@
 <?php
-namespace Qinx\Qxanz\Event;
+namespace Qinx\Qxanz\Domain\Repository;
 
 	/***************************************************************
 	 *
@@ -27,7 +27,28 @@ namespace Qinx\Qxanz\Event;
 	 ***************************************************************/
 
 /**
- * Event
+ * The repository for Event
  */
-class Event {
+class EventRepository extends ApplicationRepository {
+
+	/**
+	 * Events
+	 *
+	 * @var $events
+	 */
+	protected $events = [
+		'onTurnEnd'	=> [
+
+		]
+	];
+
+	/**
+	 * Return all events that matching to the given options
+	 *
+	 * @param array $options
+	 * @return array
+	 */
+	public function findAll($options = []) {
+		return [];
+	}
 }
