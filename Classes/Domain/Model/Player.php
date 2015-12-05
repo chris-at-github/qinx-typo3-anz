@@ -30,7 +30,7 @@ namespace Qinx\Qxanz\Domain\Model;
 /**
  * Player
  */
-class Player extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Player extends Application {
 
 	/**
 	 * title
