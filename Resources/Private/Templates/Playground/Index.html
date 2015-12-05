@@ -17,8 +17,17 @@
 		</div>
 		<div class="col-sm-4">
 
+			<f:if condition="{game.player}">
+				<div class="container anz-player--properties">
+					<header>Spieler Eigenschaften</header>
+					<f:render partial="Player/Properties" arguments="{player: game.player}"/>
+				</div>
+			</f:if>
+
 			<f:if condition="{game.players}">
-				<div class="anz-game--players">
+				<div class="container anz-game--players">
+					<header>Spieler</header>
+
 					<f:render partial="Player/Listing" arguments="{players: game.players}"/>
 				</div>
 			</f:if>
