@@ -139,8 +139,8 @@
         {
             "config": {
                 "position": [
-                    59,
-                    317
+                    71,
+                    316
                 ]
             },
             "name": "New Model Object",
@@ -178,6 +178,16 @@
                             "propertyName": "title",
                             "propertyType": "String",
                             "uid": "1248267441040"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "population",
+                            "propertyType": "Integer",
+                            "uid": "127988930051"
                         }
                     ]
                 },
@@ -192,6 +202,16 @@
                             "relationType": "manyToOne",
                             "relationWire": "[wired]",
                             "uid": "578474418690"
+                        },
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": true,
+                            "propertyIsExcludeField": false,
+                            "relationDescription": "",
+                            "relationName": "attributes",
+                            "relationType": "zeroToOne",
+                            "relationWire": "[wired]",
+                            "uid": "893478234081"
                         }
                     ]
                 }
@@ -221,7 +241,7 @@
                     "addDeletedField": true,
                     "addHiddenField": true,
                     "addStarttimeEndtimeFields": true,
-                    "aggregateRoot": true,
+                    "aggregateRoot": false,
                     "categorizable": false,
                     "description": "",
                     "mapToTable": "",
@@ -306,6 +326,56 @@
                             "uid": "1177657061350"
                         }
                     ]
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    73,
+                    671
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": false,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": []
+                },
+                "name": "PlayerAttributes",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": false,
+                    "aggregateRoot": false,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "436654081171"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "maxPopulation",
+                            "propertyType": "String",
+                            "uid": "699936488538"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
                 }
             }
         }
@@ -408,10 +478,22 @@
                 "terminal": "SOURCES",
                 "uid": "1225660960544"
             }
+        },
+        {
+            "src": {
+                "moduleId": 2,
+                "terminal": "relationWire_1",
+                "uid": "893478234081"
+            },
+            "tgt": {
+                "moduleId": 5,
+                "terminal": "SOURCES",
+                "uid": "436654081171"
+            }
         }
     ],
     "log": {
-        "last_modified": "2015-12-04 07:37",
+        "last_modified": "2015-12-05 03:10",
         "extension_builder_version": "6.2.0",
         "be_user": "Christian Pschorr (1)"
     }

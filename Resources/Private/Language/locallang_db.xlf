@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2015-12-04T07:37:47Z" product-name="qxanz">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-12-05T15:10:05Z" product-name="qxanz">
 		<header/>
 		<body>
 			<trans-unit id="tx_qxanz_domain_model_game">
@@ -30,8 +30,14 @@
 			<trans-unit id="tx_qxanz_domain_model_player.title">
 				<source>Title</source>
 			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_player.population">
+				<source>Population</source>
+			</trans-unit>
 			<trans-unit id="tx_qxanz_domain_model_player.game">
 				<source>Game</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_player.attributes">
+				<source>Attributes</source>
 			</trans-unit>
 			<trans-unit id="tx_qxanz_domain_model_systembuilding">
 				<source>System Building</source>
@@ -47,6 +53,12 @@
 			</trans-unit>
 			<trans-unit id="tx_qxanz_domain_model_building.system">
 				<source>System</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_playerattributes">
+				<source>Player Attributes</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_playerattributes.max_population">
+				<source>Max Population</source>
 			</trans-unit>
 		</body>
 	</file>

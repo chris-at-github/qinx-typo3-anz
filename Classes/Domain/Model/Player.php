@@ -30,7 +30,7 @@ namespace Qinx\Qxanz\Domain\Model;
 /**
  * Player
  */
-class Player extends Application {
+class Player extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * title
@@ -40,12 +40,27 @@ class Player extends Application {
 	protected $title = '';
 
 	/**
+	 * population
+	 * 
+	 * @var integer
+	 */
+	protected $population = 0;
+
+	/**
 	 * game
 	 * 
 	 * @var \Qinx\Qxanz\Domain\Model\Game
 	 * @lazy
 	 */
 	protected $game = NULL;
+
+	/**
+	 * attributes
+	 * 
+	 * @var \Qinx\Qxanz\Domain\Model\PlayerAttributes
+	 * @lazy
+	 */
+	protected $attributes = NULL;
 
 	/**
 	 * Returns the title
@@ -64,6 +79,25 @@ class Player extends Application {
 	 */
 	public function setTitle($title) {
 		$this->title = $title;
+	}
+
+	/**
+	 * Returns the population
+	 * 
+	 * @return integer $population
+	 */
+	public function getPopulation() {
+		return $this->population;
+	}
+
+	/**
+	 * Sets the population
+	 * 
+	 * @param integer $population
+	 * @return void
+	 */
+	public function setPopulation($population) {
+		$this->population = $population;
 	}
 
 	/**
@@ -93,4 +127,24 @@ class Player extends Application {
 	public function getColony() {
 		return $this->getObjectManager()->get('\Qinx\Qxanz\Domain\Repository\ColonyRepository')->findBy(['player' => $this]);
 	}
+
+	/**
+	 * Returns the attributes
+	 *
+	 * @return \Qinx\Qxanz\Domain\Model\PlayerAttributes $attributes
+	 */
+	public function getAttributes() {
+		return $this->attributes;
+	}
+
+	/**
+	 * Sets the attributes
+	 * 
+	 * @param \Qinx\Qxanz\Domain\Model\PlayerAttributes $attributes
+	 * @return void
+	 */
+	public function setAttributes(\Qinx\Qxanz\Domain\Model\PlayerAttributes $attributes) {
+		$this->attributes = $attributes;
+	}
+
 }

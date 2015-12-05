@@ -110,10 +110,9 @@ $GLOBALS['TCA']['tx_qxanz_domain_model_game'] = array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:qxanz/Resources/Private/Language/locallang_db.xlf:tx_qxanz_domain_model_game.turn',
 			'config' => array(
-				'type' 		=> 'input',
-				'size' 		=> 4,
-				'eval' 		=> 'int',
-				'default'	=> 1,
+				'type' => 'input',
+				'size' => 4,
+				'eval' => 'int'
 			)
 		),
 		

@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $GLOBALS['TCA']['tx_qxanz_domain_model_player'] = array(
 	'ctrl' => $GLOBALS['TCA']['tx_qxanz_domain_model_player']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, game',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, population, game, attributes',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, game, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, population, game, attributes, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -106,6 +106,15 @@ $GLOBALS['TCA']['tx_qxanz_domain_model_player'] = array(
 				'eval' => 'trim'
 			),
 		),
+		'population' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:qxanz/Resources/Private/Language/locallang_db.xlf:tx_qxanz_domain_model_player.population',
+			'config' => array(
+				'type' => 'input',
+				'size' => 4,
+				'eval' => 'int'
+			)
+		),
 		'game' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:qxanz/Resources/Private/Language/locallang_db.xlf:tx_qxanz_domain_model_player.game',
@@ -114,6 +123,23 @@ $GLOBALS['TCA']['tx_qxanz_domain_model_player'] = array(
 				'foreign_table' => 'tx_qxanz_domain_model_game',
 				'minitems' => 0,
 				'maxitems' => 1,
+			),
+		),
+		'attributes' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:qxanz/Resources/Private/Language/locallang_db.xlf:tx_qxanz_domain_model_player.attributes',
+			'config' => array(
+				'type' => 'inline',
+				'foreign_table' => 'tx_qxanz_domain_model_playerattributes',
+				'minitems' => 0,
+				'maxitems' => 1,
+				'appearance' => array(
+					'collapseAll' => 0,
+					'levelLinksPosition' => 'top',
+					'showSynchronizationLink' => 1,
+					'showPossibleLocalizationRecords' => 1,
+					'showAllLocalizationLink' => 1
+				),
 			),
 		),
 		

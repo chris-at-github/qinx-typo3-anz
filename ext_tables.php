@@ -92,7 +92,7 @@ $GLOBALS['TCA']['tx_qxanz_domain_model_player'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'title,game,',
+		'searchFields' => 'title,population,game,attributes,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Player.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_qxanz_domain_model_player.gif'
 	),
@@ -153,5 +153,33 @@ $GLOBALS['TCA']['tx_qxanz_domain_model_building'] = array(
 		'searchFields' => 'player,system,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Building.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_qxanz_domain_model_building.gif'
+	),
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_qxanz_domain_model_playerattributes', 'EXT:qxanz/Resources/Private/Language/locallang_csh_tx_qxanz_domain_model_playerattributes.xlf');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_qxanz_domain_model_playerattributes');
+$GLOBALS['TCA']['tx_qxanz_domain_model_playerattributes'] = array(
+	'ctrl' => array(
+		'title'	=> 'LLL:EXT:qxanz/Resources/Private/Language/locallang_db.xlf:tx_qxanz_domain_model_playerattributes',
+		'label' => 'max_population',
+		'tstamp' => 'tstamp',
+		'crdate' => 'crdate',
+		'cruser_id' => 'cruser_id',
+		'dividers2tabs' => TRUE,
+
+		'versioningWS' => 2,
+		'versioning_followPages' => TRUE,
+
+		'languageField' => 'sys_language_uid',
+		'transOrigPointerField' => 'l10n_parent',
+		'transOrigDiffSourceField' => 'l10n_diffsource',
+		'delete' => 'deleted',
+		'enablecolumns' => array(
+			'disabled' => 'hidden',
+
+		),
+		'searchFields' => 'max_population,',
+		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/PlayerAttributes.php',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_qxanz_domain_model_playerattributes.gif'
 	),
 );

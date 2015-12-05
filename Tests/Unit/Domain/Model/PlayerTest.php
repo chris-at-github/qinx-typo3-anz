@@ -74,6 +74,29 @@ class PlayerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
+	public function getPopulationReturnsInitialValueForInteger() {
+		$this->assertSame(
+			0,
+			$this->subject->getPopulation()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setPopulationForIntegerSetsPopulation() {
+		$this->subject->setPopulation(12);
+
+		$this->assertAttributeEquals(
+			12,
+			'population',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
 	public function getGameReturnsInitialValueForGame() {
 		$this->assertEquals(
 			NULL,
@@ -91,6 +114,30 @@ class PlayerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 		$this->assertAttributeEquals(
 			$gameFixture,
 			'game',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getAttributesReturnsInitialValueForPlayerAttributes() {
+		$this->assertEquals(
+			NULL,
+			$this->subject->getAttributes()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setAttributesForPlayerAttributesSetsAttributes() {
+		$attributesFixture = new \Qinx\Qxanz\Domain\Model\PlayerAttributes();
+		$this->subject->setAttributes($attributesFixture);
+
+		$this->assertAttributeEquals(
+			$attributesFixture,
+			'attributes',
 			$this->subject
 		);
 	}
