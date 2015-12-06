@@ -37,11 +37,12 @@ class Populate extends \Qinx\Qxanz\Event\Player {
 	 * @param \Qinx\Qxanz\Domain\Model\Player $player
 	 * @return \Qinx\Qxanz\Domain\Model\Player $player
 	 */
-	public function onTurnEnd(\Qinx\Qxanz\Domain\Model\Player $player) {
+	public function onBeforeTurnEnd(\Qinx\Qxanz\Domain\Model\Player $player) {
 		$population = $player->getPopulation();
 		$population++;
 
 		$player->setPopulation($population);
+
 		return $player;
 	}
 }

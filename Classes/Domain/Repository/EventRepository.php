@@ -37,8 +37,8 @@ class EventRepository extends ApplicationRepository {
 	 * @var $events
 	 */
 	protected $events = [
-		'onTurnEnd'	=> [
-
+		'onBeforeTurnEnd'	=> [
+			'\Qinx\Qxanz\Event\Player\Populate'
 		]
 	];
 
@@ -49,6 +49,16 @@ class EventRepository extends ApplicationRepository {
 	 * @return array
 	 */
 	public function findAll($options = []) {
-		return [];
+		$return = [];
+
+		if(isset($options['event']) === true) {
+			$events = $this->events[$options['event']];
+		}
+
+		foreach($events as $event) {
+			$return[$event] = $this->objectManager->get($event);
+		}
+
+		return $return;
 	}
 }

@@ -29,5 +29,5 @@ namespace Qinx\Qxanz\Event;
 /**
  * PlayerEvent
  */
-class PlayerEvent extends Event {
+class Player extends Event {
 }

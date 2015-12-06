@@ -25,11 +25,12 @@ namespace Qinx\Qxanz\Controller;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use Qinx\Qxanz\Domain\Model\Application;
 
 /**
  * PlaygroundController
  */
-class PlaygroundController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class PlaygroundController extends ApplicationController {
 
 	/**
 	 * Action Index
@@ -75,7 +76,16 @@ class PlaygroundController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 	public function turnEndAction(\Qinx\Qxanz\Domain\Model\Game $game) {
 
 		// Before Turn End
-		$events = $this->objectManager->get('\Qinx\Qxanz\Domain\Repository\EventRepository')->findAll(['event' => 'onTurnEnd']);
+		$player	= $this->getPlayer();
+		$events = $this->objectManager->get('\Qinx\Qxanz\Domain\Repository\EventRepository')->findAll(['event' => 'onBeforeTurnEnd']);
+
+		foreach($events as $event) {
+			if($event instanceof \Qinx\Qxanz\Event\Player) {
+				$player = $event->onBeforeTurnEnd($player);
+			}
+		}
+
+		$this->objectManager->get('\Qinx\Qxanz\Domain\Repository\PlayerRepository')->save($player);
 
 		$this->objectManager->get('\Qinx\Qxanz\Domain\Repository\GameRepository')->save($game->addTurn());
 		$this->redirect('index');
