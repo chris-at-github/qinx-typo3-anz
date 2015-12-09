@@ -125,7 +125,7 @@ class Player extends Application {
 	 * @return \Qinx\Qxanz\Domain\Model\Colony
 	 */
 	public function getColony() {
-		return $this->getObjectManager()->get('\Qinx\Qxanz\Domain\Repository\ColonyRepository')->findBy(['player' => $this]);
+		return $this->getObjectManager()->get('Qinx\Qxanz\Domain\Repository\ColonyRepository')->findBy(['player' => $this]);
 	}
 
 	/**

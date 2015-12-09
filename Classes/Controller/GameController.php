@@ -37,7 +37,7 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 	 * @return void
 	 */
 	public function indexAction() {
-		$this->view->assign('games', $this->objectManager->get('\Qinx\Qxanz\Domain\Repository\GameRepository')->findAll());
+		$this->view->assign('games', $this->objectManager->get('Qinx\Qxanz\Domain\Repository\GameRepository')->findAll());
 	}
 
 	/**
@@ -59,7 +59,7 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 	 * @return void
 	 */
 	public function saveAction(\Qinx\Qxanz\Domain\Model\Game $game, $settings = array()) {
-		$this->objectManager->get('\Qinx\Qxanz\Domain\Repository\GameRepository')->save($game);
+		$this->objectManager->get('Qinx\Qxanz\Domain\Repository\GameRepository')->save($game);
 
 		// Einstellungen verarbeiten
 		if(isset($settings['player']) === true) {
@@ -67,7 +67,7 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 				$player = new \Qinx\Qxanz\Domain\Model\Player();
 				$player->setGame($game);
 
-				$this->objectManager->get('\Qinx\Qxanz\Domain\Repository\PlayerRepository')->save($player);
+				$this->objectManager->get('Qinx\Qxanz\Domain\Repository\PlayerRepository')->save($player);
 			}
 		}
 
@@ -83,7 +83,7 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 	 */
 	public function removeAction(\Qinx\Qxanz\Domain\Model\Game $game) {
 		$this->addFlashMessage(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('game.message.remove', 'Qxanz'));
-		$this->objectManager->get('\Qinx\Qxanz\Domain\Repository\GameRepository')->remove($game);
+		$this->objectManager->get('Qinx\Qxanz\Domain\Repository\GameRepository')->remove($game);
 		$this->redirect('index');
 	}
 }

@@ -39,10 +39,10 @@ class PlaygroundController extends ApplicationController {
 	 * @return void
 	 */
 	public function indexAction(\Qinx\Qxanz\Domain\Model\Game $game = null) {
-		$session = $this->objectManager->get('\Qinx\Qxanz\Service\Session'); /* @var \Qinx\Qxanz\Service\Session $session */
+		$session = $this->objectManager->get('Qinx\Qxanz\Service\Session'); /* @var \Qinx\Qxanz\Service\Session $session */
 
 		if($game === null && $session->has('game') === true) {
-			$game = $this->objectManager->get('\Qinx\Qxanz\Domain\Repository\GameRepository')->findByUid($session->get('game'));
+			$game = $this->objectManager->get('Qinx\Qxanz\Domain\Repository\GameRepository')->findByUid($session->get('game'));
 
 		} elseif($game instanceof \Qinx\Qxanz\Domain\Model\Game) {
 			$session->set('game', $game->getUid());
@@ -58,7 +58,7 @@ class PlaygroundController extends ApplicationController {
 	 * @return void
 	 */
 	public function activatePlayerAction(\Qinx\Qxanz\Domain\Model\Player $player) {
-		$session = $this->objectManager->get('\Qinx\Qxanz\Service\Session'); /* @var \Qinx\Qxanz\Service\Session $session */
+		$session = $this->objectManager->get('Qinx\Qxanz\Service\Session'); /* @var \Qinx\Qxanz\Service\Session $session */
 
 		if($player instanceof \Qinx\Qxanz\Domain\Model\Player) {
 			$session->set('player', $player->getUid());
@@ -77,7 +77,7 @@ class PlaygroundController extends ApplicationController {
 
 		// Before Turn End
 		$player	= $this->getPlayer();
-		$events = $this->objectManager->get('\Qinx\Qxanz\Domain\Repository\EventRepository')->findAll(['event' => 'onBeforeTurnEnd']);
+		$events = $this->objectManager->get('Qinx\Qxanz\Domain\Repository\EventRepository')->findAll(['event' => 'onBeforeTurnEnd']);
 
 		foreach($events as $event) {
 			if($event instanceof \Qinx\Qxanz\Event\Player) {
@@ -85,9 +85,9 @@ class PlaygroundController extends ApplicationController {
 			}
 		}
 
-		$this->objectManager->get('\Qinx\Qxanz\Domain\Repository\PlayerRepository')->save($player);
+		$this->objectManager->get('Qinx\Qxanz\Domain\Repository\PlayerRepository')->save($player);
 
-		$this->objectManager->get('\Qinx\Qxanz\Domain\Repository\GameRepository')->save($game->addTurn());
+		$this->objectManager->get('Qinx\Qxanz\Domain\Repository\GameRepository')->save($game->addTurn());
 		$this->redirect('index');
 	}
 }

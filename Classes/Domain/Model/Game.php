@@ -109,10 +109,10 @@ class Game extends Application {
 	 * @return \Qinx\Qxanz\Domain\Model\
 	 */
 	public function getPlayer() {
-		$session = $this->getObjectManager()->get('\Qinx\Qxanz\Service\Session'); /* @var \Qinx\Qxanz\Service\Session $session */
+		$session = $this->getObjectManager()->get('Qinx\Qxanz\Service\Session'); /* @var \Qinx\Qxanz\Service\Session $session */
 
 		if($session->has('player') === true) {
-			return $this->getObjectManager()->get('\Qinx\Qxanz\Domain\Repository\PlayerRepository')->findByUid($session->get('player'));
+			return $this->getObjectManager()->get('Qinx\Qxanz\Domain\Repository\PlayerRepository')->findByUid($session->get('player'));
 		}
 
 		return null;
@@ -125,7 +125,7 @@ class Game extends Application {
 	 */
 	public function getPlayers() {
 		if(isset($this->players) === false) {
-			$this->players = $this->getObjectManager()->get('\Qinx\Qxanz\Domain\Repository\PlayerRepository')->findAllBy([
+			$this->players = $this->getObjectManager()->get('Qinx\Qxanz\Domain\Repository\PlayerRepository')->findAllBy([
 				'game' => $this
 			]);
 		}

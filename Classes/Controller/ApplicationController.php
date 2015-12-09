@@ -61,7 +61,7 @@ class ApplicationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
 	protected function initializeAction() {
 		parent::initializeAction();
 
-		$this->session = $this->objectManager->get('\Qinx\Qxanz\Service\Session');
+		$this->session = $this->objectManager->get('Qinx\Qxanz\Service\Session');
 	}
 
 	/**
@@ -88,7 +88,7 @@ class ApplicationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
 	 */
 	public function getGame() {
 		if($this->game === null && $this->session->has('game') === true) {
-			$this->game = $this->objectManager->get('\Qinx\Qxanz\Domain\Repository\GameRepository')->findByUid($this->session->get('game'));
+			$this->game = $this->objectManager->get('Qinx\Qxanz\Domain\Repository\GameRepository')->findByUid($this->session->get('game'));
 		}
 
 		return $this->game;
@@ -101,7 +101,7 @@ class ApplicationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
 	 */
 	public function getPlayer() {
 		if($this->player === null && $this->session->has('player') === true) {
-			$this->player = $this->objectManager->get('\Qinx\Qxanz\Domain\Repository\PlayerRepository')->findByUid($this->session->get('player'));
+			$this->player = $this->objectManager->get('Qinx\Qxanz\Domain\Repository\PlayerRepository')->findByUid($this->session->get('player'));
 		}
 
 		return $this->player;

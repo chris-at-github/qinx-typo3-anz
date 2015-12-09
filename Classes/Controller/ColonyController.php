@@ -40,7 +40,7 @@ class ColonyController extends ApplicationController {
 	 */
 	public function indexAction() {
 		$this->view->assign('player', $this->getPlayer());
-		$this->view->assign('buildings', $this->objectManager->get('\Qinx\Qxanz\Domain\Repository\BuildingRepository')->findAllBy([
+		$this->view->assign('buildings', $this->objectManager->get('Qinx\Qxanz\Domain\Repository\BuildingRepository')->findAllBy([
 			'player' => $this->getPlayer()
 		]));
 	}
@@ -56,7 +56,7 @@ class ColonyController extends ApplicationController {
 			$this->redirect('index', 'Playground');
 		}
 
-		$this->view->assign('player', $this->objectManager->get('\Qinx\Qxanz\Domain\Repository\PlayerRepository')->findByUid($this->session->get('player')));
+		$this->view->assign('player', $this->objectManager->get('Qinx\Qxanz\Domain\Repository\PlayerRepository')->findByUid($this->session->get('player')));
 	}
 
 	/**
@@ -66,7 +66,7 @@ class ColonyController extends ApplicationController {
 	 * @return void
 	 */
 	public function saveAction(\Qinx\Qxanz\Domain\Model\Colony $colony) {
-		$this->objectManager->get('\Qinx\Qxanz\Domain\Repository\ColonyRepository')->save($colony);
+		$this->objectManager->get('Qinx\Qxanz\Domain\Repository\ColonyRepository')->save($colony);
 		$this->redirect('index');
 	}
 
@@ -77,7 +77,7 @@ class ColonyController extends ApplicationController {
 	 * @return void
 	 */
 	public function createBuildingAction(\Qinx\Qxanz\Domain\Model\Colony $colony) {
-		$this->view->assign('buildings', $this->objectManager->get('\Qinx\Qxanz\Domain\Repository\SystemBuildingRepository')->findAllBy());
+		$this->view->assign('buildings', $this->objectManager->get('Qinx\Qxanz\Domain\Repository\SystemBuildingRepository')->findAllBy());
 	}
 
 	/**
@@ -92,7 +92,7 @@ class ColonyController extends ApplicationController {
 			->setPlayer($this->getPlayer())
 			->setSystem($systemBuilding);
 
-		$this->objectManager->get('\Qinx\Qxanz\Domain\Repository\BuildingRepository')->save($building);
+		$this->objectManager->get('Qinx\Qxanz\Domain\Repository\BuildingRepository')->save($building);
 		$this->redirect('index');
 	}
 }
