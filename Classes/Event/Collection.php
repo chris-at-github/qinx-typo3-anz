@@ -31,8 +31,18 @@ namespace Qinx\Qxanz\Event;
  */
 class Collection implements \Countable, \Iterator, \ArrayAccess {
 
-	protected $storage = array();
+	/**
+	 * internal storage array
+	 *
+	 * @var array
+	 */
+	protected $storage = [];
 
+	/**
+	 * reset the pointer to first element
+	 *
+	 * @return void
+	 */
 	public function rewind() {
 		reset($this->storage);
 	}
