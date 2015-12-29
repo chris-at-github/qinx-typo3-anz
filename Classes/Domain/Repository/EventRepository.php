@@ -38,7 +38,7 @@ class EventRepository extends ApplicationRepository {
 	 */
 	protected $events = [
 		'onBeforeTurnEnd'	=> [
-			'\Qinx\Qxanz\Event\Player\Populate'
+			'Qinx\Qxanz\Event\Player\Populate'
 		]
 	];
 

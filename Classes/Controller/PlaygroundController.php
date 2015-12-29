@@ -76,16 +76,8 @@ class PlaygroundController extends ApplicationController {
 	public function turnEndAction(\Qinx\Qxanz\Domain\Model\Game $game) {
 
 		// Before Turn End
-		$player	= $this->getPlayer();
-		$events = $this->objectManager->get('Qinx\Qxanz\Domain\Repository\EventRepository')->findAll(['event' => 'onBeforeTurnEnd']);
-
-		foreach($events as $event) {
-			if($event instanceof \Qinx\Qxanz\Event\Player) {
-				$player = $event->onBeforeTurnEnd($player);
-			}
-		}
-
-		$this->objectManager->get('Qinx\Qxanz\Domain\Repository\PlayerRepository')->save($player);
+		$event = $this->objectManager->get('Qinx\Qxanz\Event\Dispatcher');
+		$event->dispatch('onBeforeTurnEnd');
 
 		$this->objectManager->get('Qinx\Qxanz\Domain\Repository\GameRepository')->save($game->addTurn());
 		$this->redirect('index');
