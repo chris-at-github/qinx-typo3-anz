@@ -34,24 +34,28 @@ namespace Qinx\Qxanz\Tests\Unit\Domain\Model;
  *
  * @author Christian Pschorr <pschorr.christian@gmail.com>
  */
-class GameTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+class GameTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+{
 	/**
 	 * @var \Qinx\Qxanz\Domain\Model\Game
 	 */
 	protected $subject = NULL;
 
-	protected function setUp() {
+	public function setUp()
+	{
 		$this->subject = new \Qinx\Qxanz\Domain\Model\Game();
 	}
 
-	protected function tearDown() {
+	public function tearDown()
+	{
 		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function getTitleReturnsInitialValueForString() {
+	public function getTitleReturnsInitialValueForString()
+	{
 		$this->assertSame(
 			'',
 			$this->subject->getTitle()
@@ -61,7 +65,8 @@ class GameTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setTitleForStringSetsTitle() {
+	public function setTitleForStringSetsTitle()
+	{
 		$this->subject->setTitle('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(
@@ -74,23 +79,12 @@ class GameTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getTurnReturnsInitialValueForInteger() {
-		$this->assertSame(
-			0,
-			$this->subject->getTurn()
-		);
-	}
+	public function getTurnReturnsInitialValueForInt()
+	{	}
 
 	/**
 	 * @test
 	 */
-	public function setTurnForIntegerSetsTurn() {
-		$this->subject->setTurn(12);
-
-		$this->assertAttributeEquals(
-			12,
-			'turn',
-			$this->subject
-		);
-	}
+	public function setTurnForIntSetsTurn()
+	{	}
 }

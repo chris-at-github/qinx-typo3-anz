@@ -34,24 +34,28 @@ namespace Qinx\Qxanz\Tests\Unit\Domain\Model;
  *
  * @author Christian Pschorr <pschorr.christian@gmail.com>
  */
-class ColonyTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+class ColonyTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+{
 	/**
 	 * @var \Qinx\Qxanz\Domain\Model\Colony
 	 */
 	protected $subject = NULL;
 
-	protected function setUp() {
+	public function setUp()
+	{
 		$this->subject = new \Qinx\Qxanz\Domain\Model\Colony();
 	}
 
-	protected function tearDown() {
+	public function tearDown()
+	{
 		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function getTitleReturnsInitialValueForString() {
+	public function getTitleReturnsInitialValueForString()
+	{
 		$this->assertSame(
 			'',
 			$this->subject->getTitle()
@@ -61,7 +65,8 @@ class ColonyTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setTitleForStringSetsTitle() {
+	public function setTitleForStringSetsTitle()
+	{
 		$this->subject->setTitle('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(
@@ -74,7 +79,8 @@ class ColonyTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getGameReturnsInitialValueForGame() {
+	public function getGameReturnsInitialValueForGame()
+	{
 		$this->assertEquals(
 			NULL,
 			$this->subject->getGame()
@@ -84,7 +90,8 @@ class ColonyTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setGameForGameSetsGame() {
+	public function setGameForGameSetsGame()
+	{
 		$gameFixture = new \Qinx\Qxanz\Domain\Model\Game();
 		$this->subject->setGame($gameFixture);
 
@@ -98,7 +105,8 @@ class ColonyTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getPlayerReturnsInitialValueForPlayer() {
+	public function getPlayerReturnsInitialValueForPlayer()
+	{
 		$this->assertEquals(
 			NULL,
 			$this->subject->getPlayer()
@@ -108,7 +116,8 @@ class ColonyTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setPlayerForPlayerSetsPlayer() {
+	public function setPlayerForPlayerSetsPlayer()
+	{
 		$playerFixture = new \Qinx\Qxanz\Domain\Model\Player();
 		$this->subject->setPlayer($playerFixture);
 

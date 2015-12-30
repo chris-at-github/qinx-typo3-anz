@@ -28,60 +28,37 @@ namespace Qinx\Qxanz\Domain\Model;
  ***************************************************************/
 
 /**
- * PlayerAttributes
+ * SystemResources
  */
-class PlayerAttributes extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class SystemResources extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+{
 
-	/**
-	 * maxPopulation
-	 *
-	 * @var int
-	 */
-	protected $maxPopulation = 0;
-
-	/**
-	 * maxStorage
-	 *
-	 * @var float
-	 */
-	protected $maxStorage = 0.0;
-
-	/**
-	 * Returns the maxPopulation
-	 *
-	 * @return int $maxPopulation
-	 */
-	public function getMaxPopulation() {
-		return $this->maxPopulation;
-	}
-
-	/**
-	 * Sets the maxPopulation
-	 *
-	 * @param int $maxPopulation
-	 * @return void
-	 */
-	public function setMaxPopulation($maxPopulation) {
-		$this->maxPopulation = $maxPopulation;
-	}
-
-	/**
-	 * Returns the maxStorage
-	 *
-	 * @return float $maxStorage
-	 */
-	public function getMaxStorage() {
-		return $this->maxStorage;
-	}
-
-	/**
-	 * Sets the maxStorage
-	 *
-	 * @param float $maxStorage
-	 * @return void
-	 */
-	public function setMaxStorage($maxStorage) {
-		$this->maxStorage = $maxStorage;
-	}
+    /**
+     * title
+     * 
+     * @var string
+     */
+    protected $title = '';
+    
+    /**
+     * Returns the title
+     * 
+     * @return string $title
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+    
+    /**
+     * Sets the title
+     * 
+     * @param string $title
+     * @return void
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
 
 }

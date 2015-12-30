@@ -1,37 +1,85 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2015-12-04T07:37:47Z" product-name="qxanz">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-12-30T07:08:28Z" product-name="qxanz">
 		<header/>
 		<body>
-
-			<!-- Basics -->
-			<trans-unit id="title">
-				<source>Bezeichnung</source>
+			<trans-unit id="tx_qxanz_domain_model_game">
+				<source>Game</source>
 			</trans-unit>
-
-			<!-- Actions -->
-			<trans-unit id="actions.create">
-				<source>Hinzufügen</source>
+			<trans-unit id="tx_qxanz_domain_model_game.title">
+				<source>Title</source>
 			</trans-unit>
-			<trans-unit id="actions.save">
-				<source>Speichern</source>
+			<trans-unit id="tx_qxanz_domain_model_game.turn">
+				<source>Turn</source>
 			</trans-unit>
-
-			<!-- Game -->
-			<trans-unit id="game.numberOfPlayers">
-				<source>Anzahl von Spielern</source>
+			<trans-unit id="tx_qxanz_domain_model_colony">
+				<source>Colony</source>
 			</trans-unit>
-
-			<trans-unit id="game.message.create">
-				<source>neues Spiel erzeugt</source>
+			<trans-unit id="tx_qxanz_domain_model_colony.title">
+				<source>Title</source>
 			</trans-unit>
-			<trans-unit id="game.message.remove">
-				<source>Spiel wurde entfernt</source>
+			<trans-unit id="tx_qxanz_domain_model_colony.game">
+				<source>Game</source>
 			</trans-unit>
-
-			<!-- Basis -->
-			<trans-unit id="colony">
-				<source>Kolonie</source>
+			<trans-unit id="tx_qxanz_domain_model_colony.player">
+				<source>Player</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_player">
+				<source>Player</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_player.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_player.population">
+				<source>Population</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_player.game">
+				<source>Game</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_player.attributes">
+				<source>Attributes</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_systembuilding">
+				<source>System Building</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_systembuilding.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_building">
+				<source>Building</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_building.player">
+				<source>Player</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_building.system">
+				<source>System</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_playerattributes">
+				<source>Player Attributes</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_playerattributes.max_population">
+				<source>Max Population</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_playerattributes.max_storage">
+				<source>Max Storage</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_systemresources">
+				<source>System Resources</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_systemresources.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_resources">
+				<source>Resources</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_resources.value">
+				<source>Value</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_resources.player">
+				<source>Player</source>
+			</trans-unit>
+			<trans-unit id="tx_qxanz_domain_model_resources.system">
+				<source>System</source>
 			</trans-unit>
 		</body>
 	</file>

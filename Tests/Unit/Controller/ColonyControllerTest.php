@@ -29,18 +29,21 @@ namespace Qinx\Qxanz\Tests\Unit\Controller;
  *
  * @author Christian Pschorr <pschorr.christian@gmail.com>
  */
-class ColonyControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+class ColonyControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+{
 
 	/**
 	 * @var \Qinx\Qxanz\Controller\ColonyController
 	 */
 	protected $subject = NULL;
 
-	protected function setUp() {
+	public function setUp()
+	{
 		$this->subject = $this->getMock('Qinx\\Qxanz\\Controller\\ColonyController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
 	}
 
-	protected function tearDown() {
+	public function tearDown()
+	{
 		unset($this->subject);
 	}
 

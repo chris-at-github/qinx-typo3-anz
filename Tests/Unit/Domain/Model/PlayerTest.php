@@ -34,24 +34,28 @@ namespace Qinx\Qxanz\Tests\Unit\Domain\Model;
  *
  * @author Christian Pschorr <pschorr.christian@gmail.com>
  */
-class PlayerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+class PlayerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+{
 	/**
 	 * @var \Qinx\Qxanz\Domain\Model\Player
 	 */
 	protected $subject = NULL;
 
-	protected function setUp() {
+	public function setUp()
+	{
 		$this->subject = new \Qinx\Qxanz\Domain\Model\Player();
 	}
 
-	protected function tearDown() {
+	public function tearDown()
+	{
 		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function getTitleReturnsInitialValueForString() {
+	public function getTitleReturnsInitialValueForString()
+	{
 		$this->assertSame(
 			'',
 			$this->subject->getTitle()
@@ -61,7 +65,8 @@ class PlayerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setTitleForStringSetsTitle() {
+	public function setTitleForStringSetsTitle()
+	{
 		$this->subject->setTitle('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(
@@ -74,30 +79,20 @@ class PlayerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getPopulationReturnsInitialValueForInteger() {
-		$this->assertSame(
-			0,
-			$this->subject->getPopulation()
-		);
-	}
+	public function getPopulationReturnsInitialValueForInt()
+	{	}
 
 	/**
 	 * @test
 	 */
-	public function setPopulationForIntegerSetsPopulation() {
-		$this->subject->setPopulation(12);
-
-		$this->assertAttributeEquals(
-			12,
-			'population',
-			$this->subject
-		);
-	}
+	public function setPopulationForIntSetsPopulation()
+	{	}
 
 	/**
 	 * @test
 	 */
-	public function getGameReturnsInitialValueForGame() {
+	public function getGameReturnsInitialValueForGame()
+	{
 		$this->assertEquals(
 			NULL,
 			$this->subject->getGame()
@@ -107,7 +102,8 @@ class PlayerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setGameForGameSetsGame() {
+	public function setGameForGameSetsGame()
+	{
 		$gameFixture = new \Qinx\Qxanz\Domain\Model\Game();
 		$this->subject->setGame($gameFixture);
 
@@ -121,7 +117,8 @@ class PlayerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getAttributesReturnsInitialValueForPlayerAttributes() {
+	public function getAttributesReturnsInitialValueForPlayerAttributes()
+	{
 		$this->assertEquals(
 			NULL,
 			$this->subject->getAttributes()
@@ -131,7 +128,8 @@ class PlayerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setAttributesForPlayerAttributesSetsAttributes() {
+	public function setAttributesForPlayerAttributesSetsAttributes()
+	{
 		$attributesFixture = new \Qinx\Qxanz\Domain\Model\PlayerAttributes();
 		$this->subject->setAttributes($attributesFixture);
 

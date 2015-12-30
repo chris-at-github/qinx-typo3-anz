@@ -49,9 +49,8 @@ Qinx Anz
 	**Table of Contents**
 
 .. toctree::
-	:maxdepth: 5
+	:maxdepth: 3
 	:titlesonly:
-	:glob:
 
 	Introduction/Index
 	User/Index
@@ -61,4 +60,4 @@ Qinx Anz
 	KnownProblems/Index
 	ToDoList/Index
 	ChangeLog/Index
-	Targets
+	Links
