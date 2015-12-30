@@ -39,9 +39,10 @@ class Populate extends \Qinx\Qxanz\Event\Player {
 	 */
 	public function onBeforeTurnEnd(\Qinx\Qxanz\Domain\Model\Player $player) {
 		$population = $player->getPopulation();
-		$population++;
 
-		$player->setPopulation($population);
+		if($population < $player->getAttributes()->getMaxPopulation()) {
+			$player->setPopulation(++$population);
+		}
 
 		return $player;
 	}
